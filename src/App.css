@@ -22,6 +22,7 @@
 }
 
 .App-header h3 {
+  font-size: 22px;
   margin-bottom: 0.5rem; /* h3と次の段落の間隔を小さくする */
 }
 
