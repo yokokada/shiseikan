@@ -1,0 +1,58 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #0a317f;
+  
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #0a317f;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-header h3 {
+  margin-bottom: 0.5rem; /* h3と次の段落の間隔を小さくする */
+}
+
+.App-header p:first-of-type {
+  margin-top: 0; /* 最初の段落の上のマージンをなくす */
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.q_box {
+  margin: 20px;
+  text-align: left;
+}
+
+.question-list {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+}
+
+.question-list li {
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+.question-list li:hover {
+  text-decoration: underline;
+}
