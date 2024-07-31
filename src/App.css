@@ -96,6 +96,7 @@ button {
 
 .answered-question-list li {
   margin: 10px 0;
+  font-size: 14px;
 }
 
 /* Modal styles */
