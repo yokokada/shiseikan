@@ -24,11 +24,11 @@ Modal.setAppElement('#root'); // アクセシビリティのために必要
 
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState("");
-  const [showList, setShowList] = useState(false);
   const [selectedQuestionIndex, setSelectedQuestionIndex] = useState(null);
   const [answeredQuestions, setAnsweredQuestions] = useState([]);
   const [allAnswered, setAllAnswered] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [buttonText, setButtonText] = useState("スタート");
 
   useEffect(() => {
     const savedAnsweredQuestions = JSON.parse(localStorage.getItem('answeredQuestions')) || [];
@@ -39,8 +39,11 @@ function App() {
     if (answeredQuestions.length === questions.length) {
       setAllAnswered(true);
       setModalIsOpen(true); // 全て答えたらモーダルを開く
+      setButtonText("全て回答！");
+    } else if (answeredQuestions.length > 0) {
+      setButtonText("次の質問");
     } else {
-      setAllAnswered(false);
+      setButtonText("スタート");
     }
   }, [answeredQuestions]);
 
@@ -51,22 +54,7 @@ function App() {
     }
     const randomIndex = Math.floor(Math.random() * unansweredQuestions.length);
     setCurrentQuestion(unansweredQuestions[randomIndex]);
-    setShowList(false);
     setSelectedQuestionIndex(null);
-  };
-
-  const toggleQuestionList = () => {
-    if (showList) {
-      setCurrentQuestion(""); // 一覧表示を消すときに質問をクリア
-    }
-    setShowList(!showList);
-    setSelectedQuestionIndex(null);
-  };
-
-  const handleQuestionClick = (question, index) => {
-    setCurrentQuestion(question);
-    setSelectedQuestionIndex(index);
-    setShowList(false);
   };
 
   const handleAnswerClick = () => {
@@ -96,29 +84,19 @@ function App() {
         <p>ジャーナリングで、1日5分、自分と向き合ってみよう</p>
         <p>どちらかを選んでボタンを押すとジャーナリングの質問が出てきますので、<br />ご自身のノートに書き込んでみてください。<br />ジャーナリングはメモをするのではなく書く方が効果的と言われています。</p>
        
-        <button onClick={getRandomQuestion}>ランダム表示</button>
-        <button onClick={toggleQuestionList}>{showList ? "一覧表示を消す" : "一覧から選ぶ"}</button>
+        <button className='start-button' onClick={getRandomQuestion}>{buttonText}</button>
 
         <div className='q_box'>
-          {showList ? (
-            <ul className='question-list'>
-              {questions.map((question, index) => (
-                <li
-                  key={index}
-                  onClick={() => handleQuestionClick(question, index)}
-                  style={{ color: selectedQuestionIndex === index ? 'orange' : answeredQuestions.includes(question) ? '#ccc' : '#0a317f' }}
-                >
-                  {formatQuestion(question)}
-                </li>
-              ))}
-            </ul>
-          ) : (
+          {currentQuestion ? (
             <div>
-              <p style={{ whiteSpace: 'pre-line' }}>{currentQuestion ? formatQuestion(currentQuestion) : "質問がここに表示されます"}</p>
-              {currentQuestion && <button onClick={handleAnswerClick}>答えた</button>}
+              <p style={{ whiteSpace: 'pre-line' }}>{formatQuestion(currentQuestion)}</p>
+              <button className='answer-button' onClick={handleAnswerClick}>答えた</button>
             </div>
+          ) : (
+            <p>質問がここに表示されます</p>
           )}
         </div>
+
         <p>答えた質問数: {answeredQuestions.length} / {questions.length}</p>
 
         {allAnswered && (
@@ -134,6 +112,17 @@ function App() {
             <button onClick={closeModal}>閉じる</button>
           </Modal>
         )}
+
+        <div className='answered-questions-box'>
+          <h3>答えた質問</h3>
+          <ul className='answered-question-list'>
+            {answeredQuestions.map((question, index) => (
+              <li key={index}>
+                {index + 1}. {formatQuestion(question)}
+              </li>
+            ))}
+          </ul>
+        </div>
       </header>
     </div>
   );

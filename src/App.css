@@ -53,20 +53,42 @@ button {
   margin-bottom: 0; /* 段落の下のマージンを0に設定 */
 }
 
-.question-list {
-  list-style-type: none;
-  padding: 0;
+.answer-button, .start-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #0a317f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.start-button {
+  background-color: orange;
+  box-shadow: 2px 2px 5px rgba(184, 170, 170, 0.3);
+  font-weight: bold; 
+}
+
+.answered-questions-box {
+  margin-top: 30px;
+  padding: 20px;
+  border: 2px solid #0a317f;
+  border-radius: 5px;
+  background-color: white;
+  color: #0a317f;
+  max-width: 80%;
   text-align: left;
 }
 
-.question-list li {
-  cursor: pointer;
-  margin: 5px 0;
-  color: #0a317f; /* リストアイテムの色を指定の色に変更 */
+.answered-question-list {
+  list-style-type: none;
+  padding: 0;
 }
 
-.question-list li:hover {
-  text-decoration: underline;
+.answered-question-list li {
+  margin: 10px 0;
 }
 
 /* Modal styles */
