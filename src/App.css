@@ -27,6 +27,12 @@
 
 .App-header p:first-of-type {
   margin-top: 0; /* 最初の段落の上のマージンをなくす */
+  font-size: 18px;
+  font-weight: bold;
+  color: orange;
+}
+.App-header p{
+  font-size: 16px;
 }
 
 button {
@@ -37,7 +43,7 @@ button {
 }
 
 .q_box {
-  margin-top: 30px; /* 上部のマージンを30pxに設定 */
+  margin-top: 20px; /* 上部のマージンを30pxに設定 */
   margin-right: 20px;
   margin-bottom: 20px;
   margin-left: 20px;
@@ -55,7 +61,7 @@ button {
 
 .answer-button, .start-button {
   display: block;
-  margin: 20px auto;
+  margin: 10px auto;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;

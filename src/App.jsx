@@ -80,11 +80,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h3>IHL死生観・ミッションステートメントセミナー事前課題②</h3>
+        <h3>IHL死生観・ミッションステートメント<br />セミナー事前課題②</h3>
         <p>ジャーナリングで、1日5分、自分と向き合ってみよう</p>
-        <p>ボタンを押すとジャーナリングの質問が出てきますので、ご自身のノートに書き込んでみてください。<br />ジャーナリングはメモをするのではなく書く方が効果的と言われています。<br />質問は14問。全て答えると何か起こるかも！</p>
+        <p>ボタンを押すとジャーナリングの質問が出てきますので、<br />ご自身のノートに書き込んでみてください。<br />ジャーナリングはスマホにメモをするのではなく、<br />書く方が効果的と言われています。<br />質問は14問。全て答えると何か起こるかも！</p>
        
         <button className='start-button' onClick={getRandomQuestion}>{buttonText}</button>
+        <p>答えた質問数: {answeredQuestions.length} / {questions.length}</p>
 
         <div className='q_box'>
           {currentQuestion ? (
@@ -97,7 +98,7 @@ function App() {
           )}
         </div>
 
-        <p>答えた質問数: {answeredQuestions.length} / {questions.length}</p>
+        
 
         {allAnswered && (
           <Modal
