@@ -50,6 +50,10 @@ button {
   color: #0a317f; /* テキストの色を指定の色に変更 */
 }
 
+.q_box p {
+  margin-bottom: 0; /* 段落の下のマージンを0に設定 */
+}
+
 .question-list {
   list-style-type: none;
   padding: 0;
@@ -58,7 +62,7 @@ button {
 
 .question-list li {
   cursor: pointer;
-  margin: 5px 0;
+  margin: 20px 0;
 }
 
 .question-list li:hover {
