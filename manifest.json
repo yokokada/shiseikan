@@ -2,7 +2,7 @@
     "name": "ジャーナリングをしてみよう",
     "short_name": "ジャーナリング",
     "description": "ジャーナリングで、1日5分、自分と向き合ってみよう",
-    "start_url": ".",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#0a317f",
