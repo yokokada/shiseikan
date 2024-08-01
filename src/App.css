@@ -128,3 +128,15 @@ button {
   background-color: rgba(0, 0, 0, 0.75);
   z-index: 1000;
 }
+.App-footer {
+  background-color: #0a317f;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+.App-footer p{
+  font-size: 9px;
+}

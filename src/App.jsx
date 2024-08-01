@@ -125,6 +125,9 @@ function App() {
           </ul>
         </div>
       </header>
+      <footer className="App-footer">
+        <p>&copy; 2024 Yoko Okada</p>
+      </footer>
     </div>
   );
 }
