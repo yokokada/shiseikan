@@ -130,7 +130,9 @@ function App() {
               </li>
             ))}
           </ul>
-          <button className='reset-button' onClick={handleReset}>リセットしてもう一度答える</button>
+            {allAnswered && (
+            <button className='reset-button' onClick={handleReset}>リセットしてもう一度答える</button>
+          )}
         </div>
       </header>
       <footer className="App-footer">
