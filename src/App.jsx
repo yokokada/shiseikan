@@ -64,6 +64,13 @@ function App() {
     setCurrentQuestion("");
   };
 
+  const handleReset = () => {
+    setAnsweredQuestions([]);
+    localStorage.removeItem('answeredQuestions');
+    setButtonText("スタート");
+    setAllAnswered(false);
+  };
+
   const closeModal = () => {
     setModalIsOpen(false);
   };
@@ -123,6 +130,7 @@ function App() {
               </li>
             ))}
           </ul>
+          <button className='reset-button' onClick={handleReset}>リセットしてもう一度答える</button>
         </div>
       </header>
       <footer className="App-footer">

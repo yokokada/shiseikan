@@ -32,7 +32,8 @@
   font-weight: bold;
   color: orange;
 }
-.App-header p{
+
+.App-header p {
   font-size: 14px;
 }
 
@@ -44,7 +45,7 @@ button {
 }
 
 .q_box {
-  margin-top: 20px; /* 上部のマージンを30pxに設定 */
+  margin-top: 20px; /* 上部のマージンを20pxに設定 */
   margin-right: 20px;
   margin-bottom: 20px;
   margin-left: 20px;
@@ -60,22 +61,41 @@ button {
   margin-bottom: 0; /* 段落の下のマージンを0に設定 */
 }
 
-.answer-button, .start-button {
+.start-button, .reset-button {
   display: block;
-  margin: 10px auto;
+  width: 180px; /* ボタンの幅を統一 */
+  margin: 20px auto;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #0a317f;
-  color: white;
   border: none;
   border-radius: 5px;
+  font-weight: bold; /* ボタンの文字を太くする */
+  color: white;
 }
 
 .start-button {
   background-color: orange;
   box-shadow: 2px 2px 5px rgba(184, 170, 170, 0.3);
-  font-weight: bold; 
+}
+
+.reset-button {
+  background-color: orange; /* リセットボタンの色をスタートボタンに合わせる */
+  box-shadow: 2px 2px 5px rgba(184, 170, 170, 0.3); /* スタートボタンと同じ影を設定 */
+}
+
+.answer-button {
+  display: block;
+  width: 180px; /* ボタンの幅を統一 */
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #0a317f; /* 紺色に設定 */
+  color: white; /* 白色の文字 */
+  border: none;
+  border-radius: 5px;
+  font-weight: bold; /* ボタンの文字を太くする */
 }
 
 .answered-questions-box {
@@ -128,6 +148,7 @@ button {
   background-color: rgba(0, 0, 0, 0.75);
   z-index: 1000;
 }
+
 .App-footer {
   background-color: #0a317f;
   color: white;
@@ -137,6 +158,7 @@ button {
   bottom: 0;
   width: 100%;
 }
-.App-footer p{
+
+.App-footer p {
   font-size: 9px;
 }
