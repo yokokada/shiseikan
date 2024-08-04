@@ -115,7 +115,7 @@ function App() {
             className="Modal"
             overlayClassName="Overlay"
           >
-            <h2>おめでとう！質問に全て答え終わりました！</h2>
+            <h2>おめでとう！<br />質問に全て答え終わりました！</h2>
             <Confetti />
             <button onClick={closeModal}>閉じる</button>
           </Modal>
